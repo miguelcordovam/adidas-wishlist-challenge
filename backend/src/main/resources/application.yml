@@ -1,0 +1,9 @@
+server:
+  port: 8383
+
+amazon:
+  dynamodb:
+    endpoint: http://dynamodb-wishlist:8000
+  aws:
+    accesskey: key
+    secretkey: secret

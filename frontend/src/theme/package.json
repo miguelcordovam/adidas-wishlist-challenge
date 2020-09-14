@@ -1,0 +1,47 @@
+{
+	"name": "mui-theme-adidas",
+	"private": true,
+	"version": "0.4.0",
+	"description": "Material UI Theme for React material-ui library styled according to YARN",
+	"main": "dist/theme.js",
+	"module": "dist/theme.es.js",
+	"files": [
+		"dist/"
+	],
+	"scripts": {
+		"build": "rollup -c && tsc --declaration --emitDeclarationOnly --skipLibCheck --declarationDir dist --project .",
+		"prepare": "npm run build",
+		"prepublishOnly": "npm ci && npm test",
+		"postpublish": "rm -r dist/ node_modules/",
+		"test": "jest"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://tools.adidas-group.com/bitbucket/scm/dc/mui-theme-adidas.git"
+	},
+	"keywords": [
+		"material-ui",
+		"react",
+		"yarn",
+		"theme",
+		"adidas"
+	],
+	"author": "Digital Creation",
+	"license": "UNLICENSED",
+	"publishConfig": {
+		"registry": "https://tools.adidas-group.com/artifactory/api/npm/npm-local"
+	},
+	"peerDependencies": {
+		"@material-ui/core": "^3.2.2"
+	},
+	"devDependencies": {
+		"@material-ui/core": "^3.9.3",
+		"@types/jest": "^24.0.12",
+		"jest": "^24.8.0",
+		"rollup": "^1.11.3",
+		"rollup-plugin-typescript": "^1.0.1",
+		"ts-jest": "^24.0.2",
+		"tslib": "^1.9.3",
+		"typescript": "^3.4.5"
+	}
+}

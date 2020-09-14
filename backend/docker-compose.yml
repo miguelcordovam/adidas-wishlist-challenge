@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  wishlist:
+    image: miguel/wishlist:latest
+    container_name: wishlist
+    networks:
+      - local
+    depends_on:
+      - dynamodb-local
+    ports:
+      - "8383:8383"
+
+  dynamodb-local:
+    image: amazon/dynamodb-local:latest
+    container_name: dynamodb-wishlist
+    command: "-jar DynamoDBLocal.jar -sharedDb"
+    ports:
+      - "8000:8000"
+    networks:
+      - local
+
+networks:
+  local:
+    driver: bridge

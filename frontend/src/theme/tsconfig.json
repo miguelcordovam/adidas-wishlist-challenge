@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "importHelpers": true,
+    "module": "esNext",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "strict": true,
+    "target": "es5",
+    "resolveJsonModule": true,
+    "lib": ["es2015", "dom"]
+  },
+  "files": ["src/theme.ts"]
+}
