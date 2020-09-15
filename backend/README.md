@@ -2,7 +2,7 @@
 
 #### Description
 
-This is a backend application that exposes a list of adidas products and a wishList to store favorite items.
+This is a backend application that exposes a list of products and a wishList to store favorite items.
 
 #### Technologies
 

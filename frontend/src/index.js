@@ -5,8 +5,6 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import reducers from './reducers';
 import reduxThunk from 'redux-thunk';
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import { adidasThemeDark } from './theme/src/theme';
 import { loadState, saveState } from  './localStorage';
 
 const persistedState = loadState();
@@ -24,11 +22,9 @@ store.subscribe(() => {
 
 ReactDOM.render(
     <Provider store = {store}>
-        <MuiThemeProvider theme={adidasThemeDark}>
             <React.StrictMode>
                 <App />
             </React.StrictMode>
-        </MuiThemeProvider>
     </Provider>, 
     document.querySelector('#root')
 );
