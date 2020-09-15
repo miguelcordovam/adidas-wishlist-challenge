@@ -7,13 +7,13 @@
             "S": "EG4958"
           },
           "name": {
-            "S": "Superstar"
+            "S": "Zuperstar"
           },
           "price": {
             "S": "99.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/ff2e419f1eda4ebab23faad6009a3a9e_9366/Zapatilla_Superstar_Blanco_EG4958.jpg"
+            "S": "1.jpg"
           }
         }
       }
@@ -24,13 +24,13 @@
             "S": "EF5408"
           },
           "name": {
-            "S": "Nite Jogger"
+            "S": "Nait Yogger"
           },
           "price": {
             "S": "129.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/81263e2aaf7f4b7fadc8ab3b011865a4_9366/Zapatilla_Nite_Jogger_Negro_EF5408.jpg"
+            "S": "2.jpg"
           }
         }
       }
@@ -41,13 +41,13 @@
             "S": "M20605"
           },
           "name": {
-            "S": "Stan Smith"
+            "S": "Stran Smicth"
           },
           "price": {
             "S": "64.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/86d1fde0c7814e1892e7a80b00bb03c0_9366/Zapatilla_Stan_Smith_Blanco_M20605.jpg"
+            "S": "3.jpg"
           }
         }
       }
@@ -58,13 +58,13 @@
             "S": "FV9250"
           },
           "name": {
-            "S": "U_Path Run"
+            "S": "T_Path Run"
           },
           "price": {
             "S": "89.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/a16cc279bcc84a6e8067abd601379b2f_9366/Zapatilla_U_Path_Run_Gris_FV9250.jpg"
+            "S": "4.jpg"
           }
         }
       }
@@ -75,13 +75,13 @@
             "S": "FW6399"
           },
           "name": {
-            "S": "Americana Low"
+            "S": "Sudamericana Low"
           },
           "price": {
             "S": "79.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/bc0742b90a2e46f5afd4abd500e5d60b_9366/Zapatilla_Americana_Low_Blanco_FW6399.jpg"
+            "S": "5.jpg"
           }
         }
       }
@@ -92,13 +92,13 @@
             "S": "FV0039"
           },
           "name": {
-            "S": "Chancla Adilette"
+            "S": "Chancla Sanddilette"
           },
           "price": {
             "S": "34.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/b4bd97df2d304922a970ac2b01052323_9366/Chancla_Adilette_Rosa_FV0039.jpg"
+            "S": "6.jpg"
           }
         }
       }
@@ -109,13 +109,13 @@
             "S": "FV7885"
           },
           "name": {
-            "S": "Gazelle"
+            "S": "Gaselle"
           },
           "price": {
             "S": "69.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/63e278b4d37c4d11874aac020078ba84_9366/Zapatilla_Gazelle_Burgundy_FV7885.jpg"
+            "S": "7.jpg"
           }
         }
       }
@@ -126,13 +126,13 @@
             "S": "FW2520"
           },
           "name": {
-            "S": "Falcon"
+            "S": "Halcon"
           },
           "price": {
             "S": "59.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/9395a17ce43446a8a85eac2f0131cd98_9366/Zapatilla_Falcon_Blanco_FW2520.jpg"
+            "S": "8.jpg"
           }
         }
       }
@@ -143,13 +143,13 @@
             "S": "FV9021"
           },
           "name": {
-            "S": "NMD_R1 V2"
+            "S": "NMD_R2 V5"
           },
           "price": {
             "S": "139.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/371fa9befc6a45c28138aaf00110e1e5_9366/Zapatilla_NMD_R1_V2_Negro_FV9021.jpg"
+            "S": "9.jpg"
           }
         }
       }
@@ -160,13 +160,13 @@
             "S": "FV5359"
           },
           "name": {
-            "S": "Swift Run RF"
+            "S": "Swift Ran RF"
           },
           "price": {
             "S": "90.00"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/9087a99ac2f34bd8a52daaf100f4a288_9366/Zapatilla_Swift_Run_RF_Azul_FV5359.jpg"
+            "S": "10.jpg"
           }
         }
       }
@@ -177,13 +177,13 @@
             "S": "EG3192"
           },
           "name": {
-            "S": "Questar Flow"
+            "S": "More Flow"
           },
           "price": {
             "S": "74.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/4c7c10937b7b4c4fabfaab0900cd3c17_9366/Zapatilla_Questar_Flow_Negro_EG3192.jpg"
+            "S": "11.jpg"
           }
         }
       }
@@ -194,13 +194,13 @@
             "S": "H68725"
           },
           "name": {
-            "S": "Continental 80"
+            "S": "Air Force 800"
           },
           "price": {
             "S": "88.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/ff1df3422e414252a7e1abdd00c4cb6c_9366/Zapatilla_Continental_80_Blanco_H68725.jpg"
+            "S": "12.jpg"
           }
         }
       }
@@ -211,13 +211,13 @@
             "S": "FU9787"
           },
           "name": {
-            "S": "Continental 80"
+            "S": "Yordan 80"
           },
           "price": {
             "S": "99.90"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/b0f4c7c8963b4346acfbab9e012e407a_9366/Zapatilla_Continental_80_Blanco_FU9787.jpg"
+            "S": "13.jpg"
           }
         }
       }
@@ -228,13 +228,13 @@
             "S": "EF2803"
           },
           "name": {
-            "S": "American Hi"
+            "S": "American Hello"
           },
           "price": {
             "S": "89.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/463218add0084c04bfd1a9bc01841e20_9366/Zapatilla_Americana_Hi_Blanco_EF2803.jpg"
+            "S": "14.jpg"
           }
         }
       }
@@ -245,13 +245,13 @@
             "S": "F36414"
           },
           "name": {
-            "S": "Grand Court"
+            "S": "Grande Cortez"
           },
           "price": {
             "S": "74.95"
           },
           "imgUrl": {
-            "S": "https://assets.adidas.com/images/w_600,f_auto,q_auto/0803b46053e4443ba416a99900077d1a_9366/Zapatilla_Grand_Court_Negro_F36414.jpg"
+            "S": "15.jpg"
           }
         }
       }

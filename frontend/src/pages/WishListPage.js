@@ -54,7 +54,7 @@ class WishListPage extends React.Component {
                             <Grid container spacing={2}>
                             <Grid item key={product.id}>
                                 <div className={classes.image}>
-                                    <img className={classes.img} alt={product.name} src={product.imgUrl} />
+                                    <img className={classes.img} alt={product.name} src={`${process.env.PUBLIC_URL}/img/${product.imgUrl}`} />
                                 </div>
                             </Grid>
                             <Grid item xs={12} sm container>

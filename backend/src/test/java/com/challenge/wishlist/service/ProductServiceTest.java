@@ -34,7 +34,7 @@ public class ProductServiceTest {
     Product product = new Product();
     product.setId("EF1234");
     product.setImgUrl("image");
-    product.setName("Superstar");
+    product.setName("Random");
     product.setPrice("99.99");
     products.add(product);
 

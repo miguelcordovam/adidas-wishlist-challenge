@@ -114,7 +114,7 @@ class ProductsPage extends React.Component  {
                     <GridList cellHeight={180} className={classes.gridList} cols={3}>
                         {this.props.products.map((product) => (
                             <GridListTile key={product.id}>
-                                <img src={product.imgUrl} alt={product.name} />
+                                <img src={`${process.env.PUBLIC_URL}/img/${product.imgUrl}`} alt={product.name} />
                                 <GridListTileBar
                                     title={product.name}
                                     subtitle={<span>€ {product.price}</span>}
