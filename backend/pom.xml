@@ -8,7 +8,7 @@
         <version>2.3.1.RELEASE</version>
         <relativePath/>
     </parent>
-    <groupId>com.adidas.challenge</groupId>
+    <groupId>com.challenge</groupId>
     <artifactId>wishlist</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>example</name>

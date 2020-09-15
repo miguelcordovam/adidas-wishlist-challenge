@@ -5,7 +5,7 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 
 @Mapper(componentModel = "spring",
         nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE,
-        implementationPackage = "com.adidas.challenge.wishlist.mapper.impl")
+        implementationPackage = "com.challenge.wishlist.mapper.impl")
 public interface WishListMapper {
 
 
