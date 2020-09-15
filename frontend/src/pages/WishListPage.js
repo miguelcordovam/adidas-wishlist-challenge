@@ -1,12 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {fetchWishList, removeProductFromWishList, signIn} from '../actions';
+import {fetchWishList, removeProductFromWishList} from '../actions';
 import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import ButtonBase from '@material-ui/core/ButtonBase';
 
 const useStyles = theme => ({
     root: {
