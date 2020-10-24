@@ -1,9 +1,40 @@
 server:
-  port: 8383
+  port: 8080
 
 amazon:
   dynamodb:
-    endpoint: http://dynamodb-wishlist:8000
+    endpoint: http://localhost:8000
   aws:
     accesskey: key
     secretkey: secret
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    host: localhost
+    port: 6379
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: 154554438310-llommgs3b12cj8sqc9mjq2a82ganne1e.apps.googleusercontent.com
+            clientSecret: kPC2kSuNxkAvg64emAUrVMid
+            redirectUri: "{baseUrl}/oauth2/callback/{registrationId}"
+            scope:
+              - email
+              - profile
+app:
+  auth:
+    tokenSecret: 926D96C90030DD58429D2751AC1BDBBC
+    tokenExpirationMsec: 864000000
+  oauth2:
+    # After successfully authenticating with the OAuth2 Provider,
+    # we'll be generating an auth token for the user and sending the token to the
+    # redirectUri mentioned by the client in the /oauth2/authorize request.
+    # We're not using cookies because they won't work well in mobile clients.
+    authorizedRedirectUris:
+      - http://localhost:3000/oauth2/redirect
+      - myandroidapp://oauth2/redirect
+      - myiosapp://oauth2/redirect

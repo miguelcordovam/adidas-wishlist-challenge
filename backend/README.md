@@ -8,8 +8,8 @@ This is a backend application that exposes a list of products and a wishList to 
 
 - Java 8
 - Spring Boot
-- DynamoDB (Product and WishList tables)
-
+- DynamoDB
+- redis
 
 #### Steps to run:
 
@@ -37,9 +37,17 @@ docker-compose up
 ```
 aws dynamodb create-table --cli-input-json file://productTable.json --endpoint-url http://localhost:8000
 aws dynamodb create-table --cli-input-json file://wishListTable.json --endpoint-url http://localhost:8000
+aws dynamodb create-table --cli-input-json file://userTable.json --endpoint-url http://localhost:8000
 ```
 
 **4. Load initial data for products**
 ```
 aws dynamodb batch-write-item --endpoint-url http://localhost:8000  --request-items file://data.json
 ```
+
+
+#### Design Decisions
+
+**1. Security**
+
+**2. **

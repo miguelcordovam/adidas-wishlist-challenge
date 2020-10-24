@@ -9,13 +9,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.core.annotation.Order;
 import org.springframework.util.StringUtils;
 
 @Configuration
 @Primary
 @EnableDynamoDBRepositories
-        (basePackages = "com.challenge")
+        (basePackages = "com.challenge.wishlist.repository")
 public class DynamoDBConfig {
 
   @Value("${amazon.dynamodb.endpoint}")
