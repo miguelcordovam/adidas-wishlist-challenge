@@ -8,7 +8,6 @@ import com.challenge.wishlist.repository.UserRepository;
 import com.challenge.wishlist.security.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import redis.clients.jedis.Jedis;
 
 @Service
 public class UserService {
@@ -17,10 +16,10 @@ public class UserService {
   private UserRepository userRepository;
 
   @Autowired
-  private Jedis jedis;
+  private UserMapper userMapper;
 
   @Autowired
-  private UserMapper userMapper;
+  private RedisService redisService;
 
   @Autowired
   private TokenProvider tokenProvider;
@@ -33,8 +32,6 @@ public class UserService {
   }
 
   public void logout (String token) {
-    //token will live at most expiration time in yaml, after this redis will remove them
-    jedis.set(token, tokenProvider.getUserIdFromToken(token));
-    jedis.expire(token, 864000);
+    redisService.set(token, tokenProvider.getUserIdFromToken(token), 864000);
   }
 }

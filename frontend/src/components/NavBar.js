@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import GoogleAuth from './GoogleAuth';
+import Logout from './Logout';
 
 const NavBar = () => {
     return (
@@ -14,7 +14,7 @@ const NavBar = () => {
                         <Link to ="/wishlist">WishList</Link>
                     </li>
                     <li>
-                        <GoogleAuth />
+                        <Logout />
                     </li>
                 </ul>
             </nav>

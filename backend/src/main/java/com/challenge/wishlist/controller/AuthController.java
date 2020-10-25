@@ -1,12 +1,7 @@
 package com.challenge.wishlist.controller;
 
-import com.challenge.wishlist.exception.BadRequestException;
-import com.challenge.wishlist.domain.AuthProvider;
-import com.challenge.wishlist.domain.User;
-import com.challenge.wishlist.payload.ApiResponse;
 import com.challenge.wishlist.payload.AuthResponse;
 import com.challenge.wishlist.payload.LoginRequest;
-import com.challenge.wishlist.payload.SignUpRequest;
 import com.challenge.wishlist.repository.UserRepository;
 import com.challenge.wishlist.security.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
-import java.net.URI;
 
 @RestController
 @RequestMapping("/auth")
@@ -56,30 +49,4 @@ public class AuthController {
         String token = tokenProvider.createToken(authentication);
         return ResponseEntity.ok(new AuthResponse(token));
     }
-
-    @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
-        if(userRepository.findByEmail(signUpRequest.getEmail()).isPresent()) {
-            throw new BadRequestException("Email address already in use.");
-        }
-
-        // Creating user's account
-        User user = new User();
-        user.setName(signUpRequest.getName());
-        user.setEmail(signUpRequest.getEmail());
-        user.setPassword(signUpRequest.getPassword());
-        user.setProvider(AuthProvider.local.toString());
-
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-
-        User result = userRepository.save(user);
-
-        URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/user/me")
-                .buildAndExpand(result.getEmail()).toUri();
-
-        return ResponseEntity.created(location)
-                .body(new ApiResponse(true, "User registered successfully@"));
-    }
-
 }

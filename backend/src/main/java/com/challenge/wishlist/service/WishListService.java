@@ -5,6 +5,7 @@ import com.challenge.wishlist.dto.ProductDto;
 import com.challenge.wishlist.mapper.ProductMapper;
 import com.challenge.wishlist.repository.ProductRepository;
 import com.challenge.wishlist.repository.WishListRepository;
+import com.challenge.wishlist.security.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,8 +28,11 @@ public class WishListService {
   @Autowired
   private ProductMapper productMapper;
 
-  public List<ProductDto> getWishList (String userId) {
+  @Autowired
+  private TokenProvider tokenProvider;
 
+  public List<ProductDto> getWishList (String token) {
+    String userId = tokenProvider.getUserIdFromToken(token);
     Optional<WishList> wishList = wishListRepository.findById(userId);
     List<ProductDto> products = new ArrayList<>();
 
@@ -38,13 +42,13 @@ public class WishListService {
           products.add(productMapper.toDto(p));
         }
       });
-
     }
 
     return products;
   }
 
-  public void addProductToWishList (String userId, String productId) {
+  public void addProductToWishList (String token, String productId) {
+    String userId = tokenProvider.getUserIdFromToken(token);
     Optional<WishList> wishListFound = wishListRepository.findById(userId);
 
     if (wishListFound.isPresent()){
@@ -65,7 +69,8 @@ public class WishListService {
     }
   }
 
-  public void removeProductFromWishList (String userId, String productId) {
+  public void removeProductFromWishList (String token, String productId) {
+    String userId = tokenProvider.getUserIdFromToken(token);
     Optional<WishList> wishListFound = wishListRepository.findById(userId);
 
     if (wishListFound.isPresent()){

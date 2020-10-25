@@ -20,13 +20,8 @@ public class User {
   private String providerId;
 
   @DynamoDBAttribute
-  private Boolean emailVerified = false;
-
-  @DynamoDBAttribute
   private String imageUrl;
 
-  @DynamoDBAttribute
-  private String password;
 
   public String getName() {
     return name;
@@ -60,28 +55,12 @@ public class User {
     this.email = email;
   }
 
-  public Boolean getEmailVerified() {
-    return emailVerified;
-  }
-
-  public void setEmailVerified(Boolean emailVerified) {
-    this.emailVerified = emailVerified;
-  }
-
   public String getImageUrl() {
     return imageUrl;
   }
 
   public void setImageUrl(String imageUrl) {
     this.imageUrl = imageUrl;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
   }
 
 }

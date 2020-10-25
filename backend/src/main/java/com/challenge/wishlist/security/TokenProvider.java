@@ -2,6 +2,7 @@ package com.challenge.wishlist.security;
 
 import com.challenge.wishlist.config.AppProperties;
 import com.challenge.wishlist.repository.UserRepository;
+import com.challenge.wishlist.service.RedisService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -14,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-import redis.clients.jedis.Jedis;
 
 import java.util.Date;
 
@@ -28,7 +28,7 @@ public class TokenProvider {
   private UserRepository userRepository;
 
   @Autowired
-  private Jedis jedis;
+  private RedisService redisService;
 
   public TokenProvider(AppProperties appProperties) {
     this.appProperties = appProperties;
@@ -41,7 +41,7 @@ public class TokenProvider {
     Date expiryDate = new Date(now.getTime() + appProperties.getAuth().getTokenExpirationMsec());
 
     return Jwts.builder()
-            .setSubject(userPrincipal.getId())
+            .setSubject(userPrincipal.getEmail())
             .setIssuedAt(new Date())
             .setExpiration(expiryDate)
             .signWith(SignatureAlgorithm.HS512, appProperties.getAuth().getTokenSecret())
@@ -80,6 +80,11 @@ public class TokenProvider {
   }
 
   private boolean isTokenValidInDB(String token) {
-    return jedis.get(token) == null;
+    try {
+      return token != null ? redisService.get(token) == null: false;
+    } catch (Exception e) {
+      logger.error("Error connecting to Redis", e);
+    }
+    return true;
   }
 }
