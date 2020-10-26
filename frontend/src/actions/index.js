@@ -22,7 +22,6 @@ export const signOut = () => {
 };
 
 export const fetchProducts = () => async dispatch => {
-
     const response = await products.get('/products');
 
     dispatch({
@@ -32,8 +31,7 @@ export const fetchProducts = () => async dispatch => {
 }
 
 export const addProductToWishList = (product) => async (dispatch, getState) => {
-    const { userId } = getState().auth;
-    await products.post(`/wishlist/${userId}/products/${product.id}`);
+    await products.post(`/wishlist/${product.id}`);
 
     dispatch({
         type: ADD_PRODUCT_TO_WISHLIST,
@@ -42,8 +40,7 @@ export const addProductToWishList = (product) => async (dispatch, getState) => {
 }
 
 export const removeProductFromWishList = (product) => async (dispatch, getState) => {
-    const { userId } = getState().auth;
-    await products.delete(`/wishlist/${userId}/products/${product.id}`);
+    await products.delete(`/wishlist/${product.id}`);
 
     dispatch({
         type: REMOVE_PRODUCT_FROM_WISHLIST,
@@ -52,9 +49,7 @@ export const removeProductFromWishList = (product) => async (dispatch, getState)
 }
 
 export const fetchWishList = () => async (dispatch, getState) => {
-    const { userId } = getState().auth;
-
-    const response = await products.get('/wishlist?userId='+ userId);
+    const response = await products.get('/wishlist');
     
     dispatch({
         type: FETCH_WISHLIST,

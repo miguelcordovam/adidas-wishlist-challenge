@@ -1,4 +1,5 @@
 import {SIGN_IN, SIGN_OUT} from '../actions/types';
+import { ACCESS_TOKEN } from '../constants';
 
 const INITIAL_STATE = {
     isSignedIn: null,
@@ -10,6 +11,7 @@ export default (state = INITIAL_STATE, action) => {
         case SIGN_IN:
             return {...state, isSignedIn: true, userId: action.payload};
         case SIGN_OUT:
+            localStorage.removeItem(ACCESS_TOKEN);
             return {...state, isSignedIn: false, userId: null};
         default: 
             return state;
