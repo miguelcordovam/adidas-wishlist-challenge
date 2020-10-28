@@ -61,7 +61,7 @@ endpoint **http://localhost:8080/oauth2/authorize/google?redirect_uri=http://loc
  
 3. This endpoint is configured inside Oauth2 client from Spring Oauth2 Client, and will invoke Google server.
 
-4. Once Google authenticate this user, it will call the callback endpoint. This application will create
+4. Once Google authenticates this user, it will call the callback endpoint. This backend application will create
 a JWT token and send it back to the frontend.
 
 5. This will hit **http://localhost:3000/oauth2/redirect** in frontend. Look at **App.js** where routes

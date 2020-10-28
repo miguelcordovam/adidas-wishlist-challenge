@@ -4,7 +4,7 @@ import Logout from './Logout';
 
 const NavBar = () => {
     return (
-        <div className="yarn">
+        <div>
             <nav>
                 <ul>
                     <li>

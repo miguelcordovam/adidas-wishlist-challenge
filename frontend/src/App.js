@@ -19,6 +19,7 @@ class App extends React.Component {
                     {this.props.isSignedIn?<NavBar />: null}
                     <div id="page-body">
                         <Switch>
+                            <PrivateRoute path ="/" component={ProductsPage} authenticated={this.props.isSignedIn} exact />
                             <PrivateRoute path ="/products" component={ProductsPage} authenticated={this.props.isSignedIn} exact />
                             <PrivateRoute path ="/wishlist" component={WishListPage} authenticated={this.props.isSignedIn} exact />
                             <Route path="/login"

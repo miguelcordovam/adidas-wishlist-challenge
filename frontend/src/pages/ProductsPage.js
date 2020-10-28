@@ -63,7 +63,6 @@ class ProductsPage extends React.Component  {
     }
 
     handleChange = (event) => {
-        
         this.sortList(event.target.value);
         this.setState({
             sortBy: event.target.value
@@ -81,12 +80,12 @@ class ProductsPage extends React.Component  {
     renderList () {
         const { classes } = this.props;
         const favorites = this.props.wishListIds.map(p => p.id);
-        const isSignedIn = this.props.isSignedIn;
-
 
         if (this.state.sortBy !== '') {
             this.sortList(this.state.sortBy);
         }
+
+        console.log(this.props.products);
 
         return (
             <>            
@@ -119,17 +118,11 @@ class ProductsPage extends React.Component  {
                                     title={product.name}
                                     subtitle={<span>€ {product.price}</span>}
                                     actionIcon={
-                                        isSignedIn ? 
-
                                         <IconButton aria-label="Add to WishList" className={classes.icon} 
                                             onClick={() => favorites.includes(product.id) ? this.removeProductFromWishList(product) :this.addProductToWishList(product)}>
                                             {
                                                 favorites.includes(product.id) ? <FavoriteOutlinedIcon /> :<FavoriteBorderOutlinedIcon />
                                             }
-                                        </IconButton>
-                                        :
-                                        <IconButton aria-label="Add to WishList" className={classes.icon} >
-                                            <FavoriteBorderOutlinedIcon />
                                         </IconButton>
                                     }
                                 />
@@ -143,22 +136,18 @@ class ProductsPage extends React.Component  {
 
 
     render () {
-
         return (
-            
             <div>
                 {this.renderList()}
             </div>
         );
     }
-    
 }
 
 const mapStateToProps = (state) => {
     return {
         products: Object.values(state.products),
-        wishListIds: Object.values(state.wishList),
-        isSignedIn: state.auth.isSignedIn
+        wishListIds: Object.values(state.wishList)
     };
 }
 

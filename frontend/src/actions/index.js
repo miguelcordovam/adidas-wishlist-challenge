@@ -8,10 +8,9 @@ import {
 } from './types';
 import products from '../apis/products';
 
-export const signIn = (userId) => {
+export const signIn = () => {
     return {
-        type: SIGN_IN,
-        payload: userId
+        type: SIGN_IN
     };
 };
 
@@ -30,7 +29,7 @@ export const fetchProducts = () => async dispatch => {
     });
 }
 
-export const addProductToWishList = (product) => async (dispatch, getState) => {
+export const addProductToWishList = (product) => async (dispatch) => {
     await products.post(`/wishlist/${product.id}`);
 
     dispatch({
@@ -39,7 +38,7 @@ export const addProductToWishList = (product) => async (dispatch, getState) => {
     });
 }
 
-export const removeProductFromWishList = (product) => async (dispatch, getState) => {
+export const removeProductFromWishList = (product) => async (dispatch) => {
     await products.delete(`/wishlist/${product.id}`);
 
     dispatch({
@@ -48,7 +47,7 @@ export const removeProductFromWishList = (product) => async (dispatch, getState)
     });
 }
 
-export const fetchWishList = () => async (dispatch, getState) => {
+export const fetchWishList = () => async (dispatch) => {
     const response = await products.get('/wishlist');
     
     dispatch({

@@ -9,10 +9,10 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case SIGN_IN:
-            return {...state, isSignedIn: true, userId: action.payload};
+            return {...state, isSignedIn: true};
         case SIGN_OUT:
             localStorage.removeItem(ACCESS_TOKEN);
-            return {...state, isSignedIn: false, userId: null};
+            return {...state, isSignedIn: false};
         default: 
             return state;
     }
