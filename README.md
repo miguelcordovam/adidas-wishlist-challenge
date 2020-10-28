@@ -10,3 +10,7 @@ This is an application to browse products and pick favorites items. The applicat
 - Redux
 - Spring Boot
 - DynamoDB
+- Java
+- redis
+
+
