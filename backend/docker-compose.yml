@@ -1,15 +1,15 @@
 version: '3.7'
 services:
-  wishlist:
-    image: miguel/wishlist:latest
-    container_name: wishlist
-    networks:
-      - local
-    depends_on:
-      - dynamodb-local
-      - redis
-    ports:
-      - "8080:8080"
+#  wishlist:
+#    image: miguel/wishlist:latest
+#    container_name: wishlist
+#    networks:
+#      - local
+#    depends_on:
+#      - dynamodb-local
+#      - redis
+#    ports:
+#      - "8080:8080"
 
   dynamodb-local:
     image: amazon/dynamodb-local:latest
