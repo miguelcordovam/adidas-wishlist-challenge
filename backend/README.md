@@ -92,6 +92,14 @@ This will blacklist this token in **redis** to avoid misuse of token in case is 
     redis is being used to blacklist jwt tokens for logout scenario. In every request we will check if token
     is blacklisted or not and when user logs out we will insert the token in redis with an expiration time.
 
+    Use these commands to query redis:
+    ```
+    docker exec -it container-id bash
+    redis-cli
+    keys *
+    flushall
+    ```
+
 **3. API Documentation**
 
 Go to this url: **http://localhost:8080/swagger-ui.html** to access API documentation in Swagger format.

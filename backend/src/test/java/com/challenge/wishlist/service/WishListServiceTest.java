@@ -6,6 +6,7 @@ import com.challenge.wishlist.dto.ProductDto;
 import com.challenge.wishlist.mapper.ProductMapper;
 import com.challenge.wishlist.repository.ProductRepository;
 import com.challenge.wishlist.repository.WishListRepository;
+import com.challenge.wishlist.security.TokenProvider;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -20,6 +21,7 @@ import java.util.Optional;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -39,6 +41,9 @@ public class WishListServiceTest {
   @Mock
   private ProductMapper productMapper;
 
+  @Mock
+  private TokenProvider tokenProvider;
+
   @Test
   public void getWishList() {
     WishList wishList = new WishList();
@@ -55,6 +60,7 @@ public class WishListServiceTest {
 
     when(wishListRepository.findById(any())).thenReturn(Optional.of(wishList));
     when(productRepository.findAll()).thenReturn(products);
+    when(tokenProvider.getUserIdFromToken(anyString())).thenReturn("user@test.com");
 
     List<ProductDto> result = wishListService.getWishList("123435454");
 
@@ -69,6 +75,7 @@ public class WishListServiceTest {
     wishList.setProductIds(Arrays.asList("EF1234", "EF3143", "GV4542"));
 
     when(wishListRepository.findById(any())).thenReturn(Optional.of(wishList));
+    when(tokenProvider.getUserIdFromToken(anyString())).thenReturn("user@test.com");
 
     wishListService.addProductToWishList("123435454", "EF9999");
 
@@ -78,6 +85,7 @@ public class WishListServiceTest {
   @Test
   public void addProductToWishListNotFound() {
     when(wishListRepository.findById(any())).thenReturn(Optional.empty());
+    when(tokenProvider.getUserIdFromToken(anyString())).thenReturn("user@test.com");
 
     wishListService.addProductToWishList("123435454", "EF9999");
 
@@ -91,6 +99,7 @@ public class WishListServiceTest {
     wishList.setProductIds(Arrays.asList("EF1234", "EF3143", "GV4542"));
 
     when(wishListRepository.findById(any())).thenReturn(Optional.of(wishList));
+    when(tokenProvider.getUserIdFromToken(anyString())).thenReturn("user@test.com");
 
     wishListService.addProductToWishList("123435454", "EF1234");
 
