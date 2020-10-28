@@ -14,10 +14,12 @@ export const signIn = () => {
     };
 };
 
-export const signOut = () => {
-    return {
+export const signOut = () => async dispatch => {
+    await products.post('/user/logout');
+
+    dispatch({
         type: SIGN_OUT
-    };
+    });
 };
 
 export const fetchProducts = () => async dispatch => {
