@@ -45,6 +45,8 @@ class ProductsPage extends React.Component  {
 
     componentDidMount() {
         this.props.fetchProducts();
+        console.log(this.isSignedIn);
+
         if (this.isSignedIn) {
             this.props.fetchWishList();
         }
@@ -147,7 +149,8 @@ class ProductsPage extends React.Component  {
 const mapStateToProps = (state) => {
     return {
         products: Object.values(state.products),
-        wishListIds: Object.values(state.wishList)
+        wishListIds: Object.values(state.wishList),
+        isSignedIn: state.auth.isSignedIn
     };
 }
 
